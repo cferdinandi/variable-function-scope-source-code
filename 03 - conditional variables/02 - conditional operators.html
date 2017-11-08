@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Conditional Operators</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>Hello, world!</p>
+
+
+		<!-- Scripts -->
+		<script>
+			var getSandwich = function (useMayo) {
+
+				// Provide a default value for useMayo
+				useMayo = useMayo || true;
+
+				// Get the sandwich type
+				var sandwich;
+				if (useMayo) {
+					sandwich = 'turkey';
+				} else {
+					sandwich = 'peanut butter & jelly';
+				}
+
+				return sandwich;
+
+			};
+
+			console.log(getSandwich());
+		</script>
+	</body>
+</html>

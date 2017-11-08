@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Lexical Scope</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>Hello, world!</p>
+
+
+		<!-- Scripts -->
+		<script>
+			var sandwiches = function () {
+
+				// this is in the lexical scope
+				var sandwich = 'tuna';
+
+				var logSandwich = function () {
+
+					// Will log `tuna` in the console
+					// It can access sandwich because it's in the lexical scope
+					console.log(sandwich);
+
+					// Will log `chips` because it's in the local scope
+					var snack = 'chips';
+					console.log(snack);
+
+				};
+				logSandwich();
+
+				// Will also log `tuna` in the console
+				console.log(sandwich);
+
+				// returns "Uncaught ReferenceError: snack is not defined"
+				// `snack` is local to the logSandwich() function, and out of the lexical scope
+				console.log(snack);
+
+			};
+			sandwiches();
+		</script>
+	</body>
+</html>

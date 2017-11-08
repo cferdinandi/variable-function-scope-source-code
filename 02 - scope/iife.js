@@ -1,0 +1,3 @@
+;(function (window, document, undefined) {
+	// Your code goes here...
+})(window, document);
