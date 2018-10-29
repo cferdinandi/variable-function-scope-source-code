@@ -19,22 +19,19 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
-			var getSandwich = function (useMayo) {
+			var getSandwich = function (condiment) {
 
-				// Provide a default value for useMayo
-				useMayo = useMayo || true;
+				// Provide a default value for condiment
+				condiment = condiment || 'mayo';
 
 				// Get the sandwich type
 				var sandwich;
-				if (useMayo) {
+				if (condiment === 'mayo') {
 					sandwich = 'turkey';
 				} else {
-					sandwich = 'peanut butter & jelly';
+					sandwich = 'ham';
 				}
 
 				return sandwich;

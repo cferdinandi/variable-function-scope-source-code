@@ -19,23 +19,16 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
 			var sandwich = 'tuna';
 
 			var logSandwich = function () {
-				// logs "turkey"
-				// Does NOT update the global `sandwich` variable
 				var sandwich = 'turkey';
 				console.log(sandwich);
-
 			};
 			logSandwich();
 
-			// logs "tuna"
 			console.log(sandwich);
 		</script>
 	</body>

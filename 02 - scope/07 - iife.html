@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hoisting</title>
+		<title>IIFE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Styles -->
@@ -21,22 +21,10 @@
 
 
 		<script>
-			/**
-			 * This works!
-			 */
-			function add (num1, num2) {
-				return num1 + num2;
-			}
-			console.log(add(3, 3));
-
-
-			/**
-			 * This does, too!
-			 */
-			console.log(subtract(7, 4));
-			function subtract (num1, num2) {
-				return num1 - num2;
-			}
+			;(function (window, document, undefined) {
+				// Your code goes here...
+				console.log('running!');
+			})(window, document);
 		</script>
 	</body>
 </html>

@@ -19,10 +19,7 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
 			var sandwiches = function () {
 
@@ -31,22 +28,15 @@
 
 				var logSandwich = function () {
 
-					// Will log `tuna` in the console
-					// It can access sandwich because it's in the lexical scope
 					console.log(sandwich);
 
-					// Will log `chips` because it's in the local scope
 					var snack = 'chips';
 					console.log(snack);
 
 				};
 				logSandwich();
 
-				// Will also log `tuna` in the console
 				console.log(sandwich);
-
-				// returns "Uncaught ReferenceError: snack is not defined"
-				// `snack` is local to the logSandwich() function, and out of the lexical scope
 				console.log(snack);
 
 			};

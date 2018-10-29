@@ -19,30 +19,24 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
 			var sandwich = 'tuna';
 
-			// logs "tuna"
 			console.log(sandwich);
 
 			var logSandwich = function () {
-				// logs "tuna"
+
 				console.log(sandwich);
 
 				// Updates `sandwich` in the global scope
 				sandwich = 'turkey';
 
-				// logs "turkey"
 				console.log(sandwich);
 
 			};
 			logSandwich();
 
-			// logs "turkey"
 			console.log(sandwich);
 		</script>
 	</body>

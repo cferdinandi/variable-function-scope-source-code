@@ -19,18 +19,15 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
-			var getSandwich = function (useMayo) {
+			var getSandwich = function (condiment) {
 
-				// Provide a default value for useMayo
-				useMayo = useMayo || true;
+				// Provide a default value for condiment
+				condiment = condiment || 'mayo';
 
 				// Get the sandwich type
-				var sandwich = useMayo ? 'turkey' : 'peanut butter & jelly';
+				var sandwich = condiment === 'mayo' ? 'turkey' : 'ham';
 
 				return sandwich;
 

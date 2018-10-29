@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Project Complete</title>
+		<title>Project Template</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Styles -->
@@ -160,7 +160,7 @@
 						if (isInViewport(images[i])) {
 
 							// Make sure the image has a data-image attribute and hasn't already been loaded
-							if (!images[i].hasAttribute('data-image') || images[i].classList.contains('loaded')) continue;
+							if (!images[i].hasAttribute('data-image')) continue;
 
 							// Load the image
 							images[i].innerHTML = '<img src="' + images[i].getAttribute('data-image') + '">';
@@ -170,8 +170,8 @@
 							var text = images[i].getAttribute('data-caption');
 							addCaption(img, text);
 
-							// Add a .loaded class to our image placeholder
-							images[i].classList.add('loaded');
+							// Remove the [data-image] attribute from the placeholder
+							images[i].removeAttribute('data-image');
 
 						}
 
@@ -179,11 +179,11 @@
 
 				};
 
-				// Listen for scroll events
-				window.addEventListener('scroll', loadImages, false);
-
 				// Load images on page load
 				loadImages();
+
+				// Listen for scroll events
+				window.addEventListener('scroll', loadImages, false);
 
 			})(window, document);
 		</script>

@@ -160,7 +160,7 @@
 					if (isInViewport(images[i])) {
 
 						// Make sure the image has a data-image attribute and hasn't already been loaded
-						if (!images[i].hasAttribute('data-image') || images[i].classList.contains('loaded')) continue;
+						if (!images[i].hasAttribute('data-image')) continue;
 
 						// Load the image
 						images[i].innerHTML = '<img src="' + images[i].getAttribute('data-image') + '">';
@@ -170,8 +170,8 @@
 						var text = images[i].getAttribute('data-caption');
 						addCaption(img, text);
 
-						// Add a .loaded class to our image placeholder
-						images[i].classList.add('loaded');
+						// Remove the [data-image] attribute from the placeholder
+						images[i].removeAttribute('data-image');
 
 					}
 
@@ -179,12 +179,8 @@
 
 			}
 
-			// Listen for scroll events
-			window.addEventListener('scroll', loadImages, false);
-
 			// Load images on page load
 			loadImages();
-
 		</script>
 	</body>
 </html>

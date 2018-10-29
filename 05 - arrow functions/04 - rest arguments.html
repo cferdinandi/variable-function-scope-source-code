@@ -19,10 +19,7 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
 			var logStuff = (arg1, arg2, ...moreArgs) => {
 
@@ -37,22 +34,18 @@
 
 			};
 
-			// In this example...
-			// arg1 = 'chicken'
-			// arg2 = 'tuna'
-			// moreArgs = ['chips', 'cookie', 'soda', 'delicious']
-			console.log(logStuff('chicken', 'tuna', 'chips', 'cookie', 'soda', 'delicious'));
+			logStuff('chicken', 'tuna', 'chips', 'cookie', 'soda', 'delicious');
 
 
-			var add = (...args) => {
+			var add = (...nums) => {
 
 				// Set a starting total
 				var total = 0;
 
 				// Add each number to the total
-				for (var i = 0; i < args.length; i++) {
-					total += args[i];
-				}
+				nums.forEach(function (num) {
+					total += num;
+				});
 
 				// Return to the total
 				return total;

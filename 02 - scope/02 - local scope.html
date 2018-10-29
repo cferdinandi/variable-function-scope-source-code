@@ -19,23 +19,15 @@
 
 	<body>
 
-		<p>Hello, world!</p>
 
-
-		<!-- Scripts -->
 		<script>
 			var logSandwich = function () {
 				// this has variable local scope
 				var sandwich = 'tuna';
-
-				// Will log `tuna` in the console
-				// It can access sandwich because it's scope is local to the function
 				console.log(sandwich);
 			};
 			logSandwich();
 
-			// returns "Uncaught ReferenceError: sandwich is not defined"
-			// `sandwich` is local to the logSandwich() function, and not accessible here
 			console.log(sandwich);
 		</script>
 	</body>
