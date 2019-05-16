@@ -127,7 +127,6 @@
 		<!-- Scripts -->
 		<script>
 			;(function () {
-
 				// Get our lazy load images
 				var images = document.querySelectorAll('.lazy-load');
 
@@ -179,12 +178,11 @@
 
 				};
 
-				// Load images on page load
-				loadImages();
-
 				// Listen for scroll events
 				window.addEventListener('scroll', loadImages, false);
 
+				// Load images on page load
+				loadImages();
 			})();
 		</script>
 	</body>

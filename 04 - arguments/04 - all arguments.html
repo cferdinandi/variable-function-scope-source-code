@@ -27,9 +27,9 @@
 				var total = 0;
 
 				// Add each number to the total
-				arguments.forEach(function (num) {
-					total += num;
-				});
+				for (var i = 0; i < arguments.length; i++) {
+					total += arguments[i];
+				}
 
 				// Return to the total
 				return total;
