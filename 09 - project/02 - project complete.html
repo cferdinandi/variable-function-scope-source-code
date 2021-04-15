@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Completed Project</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 30em;
+				width: 88%;
+			}
+
+			h2 {
+				margin-top: 2em;
+			}
+
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Dogs!</h1>
+
+		<div id="dogs"></div>
+
+
+		<!-- Scripts -->
+		<script>
+			(function () {
+
+				// Pet data
+				let petData = [
+					{
+						breeds: [
+							'Lab',
+							'German Shepard',
+							'Border Collie'
+						],
+						age: 'Adult',
+						photo: 'img/rufus.jpg'
+					},
+					{
+						name: 'Kylie Jane',
+						breeds: [
+							'Shih Tzu'
+						],
+						photo: 'img/kylie.jpg'
+					},
+					{
+						name: 'Jacque ',
+						breeds: [
+							'Chihuahua',
+							'Rat Terrier'
+						],
+						age: 'Senior',
+						photo: 'img/jacque.jpg'
+					},
+					{
+						name: 'Elsa',
+						age: 'Adult',
+						photo: 'img/elsa.jpg'
+					},
+					{
+						name: 'Colt',
+						breeds: [
+							'Staffordshire Terrier',
+							'Dalmation',
+							'Lab'
+						],
+						age: 'Puppy',
+						photo: 'img/colt.jpg'
+					}
+				];
+
+				/**
+				 * Get a list of breeds
+				 * @param  {Array}  breeds The breeds
+				 * @return {String}        The breeds, comma-separated
+				 */
+				function getBreeds (breeds) {
+					return breeds.join(', ');
+				}
+
+				/**
+				 * Get the HTML for a pet
+				 * @param  {String} name   The pet's name
+				 * @param  {Array}  breeds The pet's breeds
+				 * @param  {String} age    The pet's age
+				 * @param  {String} photo  The pet's photo
+				 * @return {String}        The HTML for the pet
+				 */
+				function getPetHTML (name = 'Unnamed (You Can Choose!)', breeds = ['Unknown'], age = 'Unknown', photo) {
+
+					let photoHTML = photo ? `<img width="300" alt="A photo of ${name}" src="${photo}">` : '';
+					let breedList = getBreeds(breeds);
+
+					return `
+						<h2>${name}</h2>
+						${photoHTML}
+						<ul>
+							<li><strong>Age:</strong> ${age}</li>
+							<li><strong>Breeds:</strong> ${breedList}</li>
+						</ul>`;
+
+				}
+
+				// Get the #dogs element
+				let petList = document.querySelector('#dogs');
+
+				// Render pet data into the UI
+				petList.innerHTML = petData.map(function (pet) {
+
+					// Destructure the pet object
+					let {name, breeds, age, photo} = pet;
+
+					// Get the HTML for the pet
+					return getPetHTML(name, breeds, age, photo);
+
+				}).join('');
+
+			})();
+		</script>
+	</body>
+</html>

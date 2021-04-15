@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Check for arguments</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			function add (num1, num2) {
+
+				// If num1 or num2 aren't defined, throw an error
+				if (!num1 || !num2) {
+					throw 'Please provide two numbers to add together';
+				}
+
+				// Add the numbers
+				return num1 + num2;
+
+			}
+
+			add(4);
+		</script>
+	</body>
+</html>

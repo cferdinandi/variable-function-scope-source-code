@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Arrow functions, arguments, and rest parameters</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			let addArgs = () => {
+
+				// Set a starting total
+				let total = 0;
+
+				// Add each number to the total
+				Array.from(arguments).forEach(function (num) {
+					total += num;
+				});
+
+				// Return to the total
+				return total;
+
+			};
+
+			// addArgs(4, 2, 11);
+
+
+			let add = (...nums) => {
+
+				// Set a starting total
+				let total = 0;
+
+				// Add each number to the total
+				nums.forEach(function (num) {
+					total += num;
+				});
+
+				// Return to the total
+				return total;
+
+			};
+
+			console.log(add(5, 4, 9, 24));
+		</script>
+	</body>
+</html>

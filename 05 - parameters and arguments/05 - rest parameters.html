@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Rest parameters</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * How the arguments object works
+			 */
+
+			function logStuff (arg1, arg2, ...moreArgs) {
+
+				// Logs arg1
+				console.log(arg1);
+
+				// Logs arg2
+				console.log(arg2);
+
+				// Logs an array of any other arguments you pass in after arg2
+				console.log(moreArgs);
+
+			}
+
+			// logStuff('chicken', 'tuna', 'chips', 'cookie', 'soda', 'delicious');
+
+
+
+			/**
+			 * A practical example
+			 */
+
+			function add (...nums) {
+
+				// Set a starting total
+				let total = 0;
+
+				// Add each number to the total
+				nums.forEach(function (num) {
+					total += num;
+				});
+
+				// Return to the total
+				return total;
+
+			}
+
+			console.log(add());
+			console.log(add(4));
+			console.log(add(4, 2, 11, 19));
+		</script>
+	</body>
+</html>

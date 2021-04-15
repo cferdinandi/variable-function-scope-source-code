@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Get all arguments</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * How the arguments object works
+			 */
+
+			function log (num1, num2) {
+
+				// logs [num1, num2] (with their values)
+				console.log(arguments);
+
+				// logs the value of `num1`
+				console.log(arguments[0]);
+
+				// logs the value of `num2`
+				console.log(arguments[1]);
+
+				// ...
+
+			}
+
+			log(4, 2);
+
+
+
+			/**
+			 * A practical example
+			 */
+
+			function add () {
+
+				// Set a starting total
+				let total = 0;
+
+				// Add each number to the total
+				Array.from(arguments).forEach(function (num) {
+					total += num;
+				});
+
+				// Return to the total
+				return total;
+
+			}
+
+			console.log(add());
+			console.log(add(4));
+			console.log(add(4, 2, 11, 19));
+		</script>
+	</body>
+</html>

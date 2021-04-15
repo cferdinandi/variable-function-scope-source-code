@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Lexical Scope</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			function sandwiches () {
+
+				// this is in the lexical scope
+				let sandwich = 'tuna';
+
+				function logSandwich () {
+					// It can access sandwich because it's in the lexical scope
+					console.log(sandwich);
+				}
+				logSandwich();
+
+				// In the local scope
+				console.log(sandwich);
+
+			}
+			sandwiches();
+
+			// `sandwich` is lexical to the sandwiches() function, and out of scope
+			console.log(sandwich);
+		</script>
+	</body>
+</html>

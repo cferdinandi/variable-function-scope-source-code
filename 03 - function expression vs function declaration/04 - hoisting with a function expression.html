@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hoisting with a Function Expression</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * This works!
+			 */
+			let add = function(num1, num2) {
+				return num1 + num2;
+			};
+			console.log(add(3, 3));
+
+
+			/**
+			 * This does not =(
+			 */
+			console.log(subtract(7, 4));
+			let subtract = function (num1, num2) {
+				return num1 - num2;
+			};
+		</script>
+	</body>
+</html>

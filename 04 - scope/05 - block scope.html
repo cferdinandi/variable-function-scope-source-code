@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Block Scope</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * The basics
+			 */
+
+			// This is in the global scope
+			let answer = null;
+			let question = false;
+
+			// This is a block
+			if (question === true) {
+
+				// This in a block scope
+				let answer = 42;
+
+			}
+
+
+
+			/**
+			 * An example
+			 */
+
+			var sandwich = 'tuna';
+			let drink = 'soda';
+
+			if (true) {
+
+				// drink is in the block scope, but sandwich is not
+				var sandwich = 'turkey';
+				let drink = 'water';
+
+				console.log(sandwich);
+				console.log(drink);
+
+			}
+
+			console.log(sandwich);
+			console.log(drink);
+		</script>
+	</body>
+</html>

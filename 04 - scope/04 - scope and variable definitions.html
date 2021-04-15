@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Scope and Variable Definitions</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			let sandwich = 'tuna';
+
+			function logSandwich () {
+
+				// This creates a local variable
+				// let sandwich = 'turkey';
+
+				// This updates the global variable instead
+				sandwich = 'turkey';
+
+				console.log(sandwich);
+
+			}
+			logSandwich();
+
+			console.log(sandwich);
+		</script>
+	</body>
+</html>
